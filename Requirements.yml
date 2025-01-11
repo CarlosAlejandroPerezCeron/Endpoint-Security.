@@ -1,0 +1,20 @@
+Software and Tools
+CrowdStrike Falcon Sensor
+
+You need a CrowdStrike account with access to the Falcon console (SaaS).
+The sensor is installed on the endpoints (Windows, Linux, macOS).
+OpenVAS (Greenbone Community Edition)
+
+Free vulnerability scanning platform.
+Repository: https://www.greenbone.net/
+Server or Virtual Machine
+
+Ubuntu Server 20.04+ (recommended).
+Docker and Docker Compose (optional, for containerized deployments of OpenVAS).
+2.2. Recommended Infrastructure
+Server for OpenVAS:
+4 vCPUs
+8 GB RAM
+80 GB disk
+Endpoints:
+Organization computers (Windows, Linux, macOS) where you will install the CrowdStrike Falcon Sensor.
