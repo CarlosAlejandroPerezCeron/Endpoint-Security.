@@ -1,0 +1,31 @@
+Important: You must have CrowdStrike Falcon console credentials. If you do not have them, register on their official site to obtain a trial version or licenses.
+
+Accessing the Falcon Console
+
+Log in to the CrowdStrike platform with your username and password.
+Downloading the Falcon Sensor
+
+Within the console, go to Hosts > Sensor Downloads.
+Select the version corresponding to your operating system (Windows, Linux, or macOS).
+Download the executable or installer file.
+Installing the Sensor on Endpoints
+
+For Windows:
+powershell
+Copy code
+CSWinSensor.exe /install /quiet
+For Linux (example on Ubuntu):
+bash
+Copy code
+sudo dpkg -i falcon-sensor_<version>.deb
+sudo /opt/CrowdStrike/falconctl -s --cid=<TU-CID>
+sudo systemctl enable falcon-sensor
+sudo systemctl start falcon-sensor
+For macOS, follow the specific instructions in the CrowdStrike documentation.
+Verifying Sensor Connection
+
+In the CrowdStrike console, go to Hosts > Host Management and verify that your endpoints are listed as “Managed.”
+Policy Configuration
+
+Under Configuration > Prevention Policy, adjust the levels of protection against malware, ransomware, and exploits.
+Under Configuration > Firewall Policy, if you want to integrate firewall, configure traffic rules.
