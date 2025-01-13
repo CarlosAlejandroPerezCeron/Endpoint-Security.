@@ -1,0 +1,14 @@
+CrowdStrike:
+
+Real-time detection and response against threats on endpoints.
+Automatic alerts in case of malware or suspicious behavior.
+OpenVAS:
+
+Regular analysis of vulnerabilities on endpoints and servers.
+Generation of reports with vulnerabilities found (CVEs, insecure configurations, etc.).
+Remediation recommendations.
+Integration:
+
+Review vulnerability results in OpenVAS and take preventive or corrective actions.
+Adjust CrowdStrike policies in case of finding new threats or vulnerabilities.
+Perform an iterative cycle of patching, scanning and validati
