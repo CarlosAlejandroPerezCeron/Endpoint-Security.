@@ -1,0 +1,41 @@
+To complement endpoint protection with vulnerability scanning, we will deploy OpenVAS on an Ubuntu server.
+
+Installing Dependencies
+
+bash
+Copy code
+sudo apt update
+sudo apt install -y wget gnupg
+Installing Greenbone Community Edition
+
+Add the official repository (example for Ubuntu 20.04):
+bash
+Copy code
+sudo apt install -y software-properties-common
+sudo add-apt-repository ppa:mrazavi/gvm
+sudo apt update
+sudo apt install -y gvm
+This will install the Greenbone components, including openvas.
+Initializing the Vulnerability Database
+
+bash
+Copy code
+sudo gvm-setup
+This command may take several minutes (or longer) depending on your internet connection.
+
+Starting Services
+
+bash
+Copy code
+sudo gvm-start
+At the end of the process, you will see a URL and credentials to access the Greenbone Security Assistant (GSA).
+
+Accessing the Web Interface (GSA)
+
+Go to https://<SERVER-IP>:9392/.
+Log in with the username and password generated when you finished the setup.
+Creating and Running Scans
+
+Within the GSA, go to Scans > Tasks and create a new task.
+Select the range of IP addresses or hostnames you want to scan (for example, endpoints with CrowdStrike installed).
+Start the scan and review the results.
