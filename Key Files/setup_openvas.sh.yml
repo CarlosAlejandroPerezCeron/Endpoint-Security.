@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Script para instalar OpenVAS en Ubuntu sin Docker
+sudo apt update
+sudo apt install -y software-properties-common
+
+echo "Agregando repositorio PPA para GVM (Greenbone Vulnerability Management)..."
+sudo add-apt-repository ppa:mrazavi/gvm -y
+sudo apt update
+
+echo "Instalando GVM..."
+sudo apt install -y gvm
+
+echo "Iniciando configuración de GVM..."
+sudo gvm-setup
+
+echo "Iniciando servicios..."
+sudo gvm-start
+
+echo "OpenVAS/GVM instalado. Revisa la URL y credenciales generadas."
