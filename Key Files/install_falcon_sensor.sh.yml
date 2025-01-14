@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Variables
+CID="<TU-CID>"
+DEB_PACKAGE="falcon-sensor_<version>.deb"
+
+# Actualizar sistema
+sudo apt update && sudo apt upgrade -y
+
+# Instalar el sensor
+sudo dpkg -i $DEB_PACKAGE
+
+# Configurar el CID
+sudo /opt/CrowdStrike/falconctl -s --cid=$CID
+
+# Habilitar y arrancar el servicio
+sudo systemctl enable falcon-sensor
+sudo systemctl start falcon-sensor
+
+echo "Instalación de CrowdStrike Falcon Sensor completada."
