@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  openvas:
+    image: greenbone/community-edition:latest
+    container_name: openvas
+    restart: unless-stopped
+    ports:
+      - "9392:9392"
+      - "5432:5432"
+    environment:
+      - USERNAME=admin
+      - PASSWORD=admin
+    volumes:
+      - openvas-data:/data
+volumes:
+  openvas-data:
